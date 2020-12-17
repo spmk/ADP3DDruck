@@ -27,11 +27,11 @@ if __name__ == "__main__":
 		hx711.set_scale_ratio(scaleRatio)
 		
 		#Erstelle eine neue csv-datei:
-		date_time = datetime.now().strftime("%y-%m-%d_%H-%M")
+		#date_time = datetime.now().strftime("%y-%m-%d_%H-%M")
 		#path = os.path.dirname(__file__)+"/Data/" + date_time
-		f = open("Data/" + date_time + ".csv", "w+")
-		f_csv_writer = csv.writer(f,delimiter=",")
-		row_index = 0
+		#f = open("Data/" + date_time + ".csv", "w+")
+		#f_csv_writer = csv.writer(f,delimiter=",")
+		#row_index = 0
 
 		print("Values are saved to: " + date_time + ".csv")
 
@@ -49,7 +49,7 @@ if __name__ == "__main__":
 			row_content = [row_index, row_time, outputvalue]
 			row_index +=1
 			#Schreibe die naeste Reihe:
-			f_csv_writer.writerow(row_content)
+			#f_csv_writer.writerow(row_content)
 			
 			if outputvalue>limit:
 				statusLEDs.lightLed("warping")
