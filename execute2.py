@@ -35,7 +35,7 @@ def measure():
             row_time = datetime.now().strftime("%H/%M/%S")
             row_content = [row_index, row_time, outputvalue]
             row_index +=1
-            Schreibe die naeste Reihe:
+            #Schreibe die naeste Reihe:
             f_csv_writer.writerow(row_content)
         
             if outputvalue > limit:
