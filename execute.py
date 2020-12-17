@@ -10,7 +10,7 @@ import Relais
 import telegrambot
 import random
 
-run = false
+run = False
 #Code wird nur ausgefuhrt, wenn execute direkt ausgefuehrt wird
 def measure(befehl_status): 
 	if befehl_status == 'start':
@@ -51,7 +51,7 @@ def measure(befehl_status):
 			#f.close() # Schliesse Daten.txt
 			GPIO.cleanup()
 	try:	
-		while run == true:
+		while run == True:
 			outputvalue = random.random()
 			print(outputvalue, "") # Hier "" kann eine Einheit eingefuegt werden
 
@@ -71,7 +71,7 @@ def measure(befehl_status):
 			else: 
 				statusLEDs.lightLed("no_warping")
 
-			if run == false:
+			if run == False:
 				break
 	
 	except (KeyboardInterrupt, SystemExit): #Programm kann mit Ctrl + C angehalten werden
