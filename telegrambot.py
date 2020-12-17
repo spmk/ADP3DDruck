@@ -4,12 +4,11 @@ import time
 from telepot.loop import MessageLoop
 import statusLEDs
 import execute
-
+x=0
 #Hier sind alle Befehle definiert, die der Bot ausfuehren kann.
 def handle(msg):
 	chat_id = msg['chat']['id']
 	command = msg['text']
-	
 	print('Got command: %s' % command)
 	
 	if command == '/status':
@@ -30,7 +29,8 @@ def handle(msg):
 		bot.sendMessage(chat_id, "Ich mach noch nix")
 		execute.run = False
 		
-
+x=x+1
+print(x)
 #Bot Objekt wird erstellt und diesem werden die Befehle uebergeben
 bot = telepot.Bot('1435246331:AAEuTzd96pMR8ACXl92za8CSFo_0gd1QCvY') #Token
 MessageLoop(bot, handle).run_as_thread()
@@ -39,7 +39,7 @@ MessageLoop(bot, handle).run_as_thread()
 print("Hi! I am your personal warping assistant!") #Auf der Konsole
 bot.sendMessage("473099318", "Hi I am your personal warping assistent!") #In Telegram
 bot.sendMessage("473099318", "I will text you if warping occurs.") #In Telegram
-
+pr
 #Diese Methode wird in execute.py aufgerufen, wenn Warping auftritt. 
 def sendMessage():
 	bot.sendMessage("473099318", "Warping erkannt und Drucker abgeschaltet!")
