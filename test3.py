@@ -21,7 +21,6 @@ bot = telepot.Bot(Telegram_Token)
 updater = Updater(Telegram_Token)
 status_Bot = 0
 z=0
-i=0
 
 # Telegram Bot Befehle definieren
 def hello(update: Update, context: CallbackContext) -> None:
@@ -72,8 +71,6 @@ def b(queue):
     print("limit zugewiesen")
     averageOfXValues = 10 #Anzahl an Ausgelesenen Werten, die zur Auswertung gemittelt werden
     hx711.set_scale_ratio(scaleRatio)
-    i = i+1
-    print("M" + i)
     try:
         while True:
             status = queue.get()
