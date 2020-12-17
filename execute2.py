@@ -51,7 +51,7 @@ def measure():
                 Relais.statusDrucker("no_warping")
             else: 
                 statusLEDs.lightLed("no_warping")
-            if test2.run == False
+            if test2.run == False:
                 break
                 
     finally:
