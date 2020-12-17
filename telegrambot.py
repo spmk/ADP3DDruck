@@ -4,7 +4,7 @@ import time
 from telepot.loop import MessageLoop
 import statusLEDs
 import execute
-x=0
+x= 0
 #Hier sind alle Befehle definiert, die der Bot ausfuehren kann.
 def handle(msg):
 	chat_id = msg['chat']['id']
