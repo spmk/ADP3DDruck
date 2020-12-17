@@ -7,7 +7,7 @@ import csv
 import os
 import statusLEDs
 import Relais
-import telegrambot
+#import telegrambot
 import random
 
 run = False
