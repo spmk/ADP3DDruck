@@ -75,8 +75,8 @@ def measure():
 		        break
 	
     except (KeyboardInterrupt, SystemExit): #Programm kann mit Ctrl + C angehalten werden
-		print("Pfiat di Gott! :D")
+	    print("Pfiat di Gott! :D")
 
     finally:
-		#f.close() # Schliesse Daten.txt
-		GPIO.cleanup()
+	    #f.close() # Schliesse Daten.txt
+	    GPIO.cleanup()
