@@ -109,11 +109,13 @@ def b(queue):
             print("GPIO Cleanup complete!")
         
 
-
-q = Queue()
-p1 = Process(target=a, args=(q,))
-p2 = Process(target=b, args=(q,))
-p1.start()
-p2.start()
-p1.join()
-p2.join()
+def main()
+    q = Queue()
+    p1 = Process(target=a, args=(q,))
+    p2 = Process(target=b, args=(q,))
+    p1.start()
+    p2.start()
+    p1.join()
+    p2.join()
+    
+main()
