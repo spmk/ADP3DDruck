@@ -63,15 +63,15 @@ def measure():
 	        #f_csv_writer.writerow(row_content)
 		
 	        if outputvalue>limit:
-			statusLEDs.lightLed("warping")
-			Relais.statusDrucker("warping")
-			telegrambot.sendMessage()
-			time.sleep(20)
-			Relais.statusDrucker("no_warping")
-		else: 
-			statusLEDs.lightLed("no_warping")
+	                statusLEDs.lightLed("warping")
+	                Relais.statusDrucker("warping")
+	                telegrambot.sendMessage()
+	                time.sleep(20)
+	                Relais.statusDrucker("no_warping")
+	        else: 
+	                statusLEDs.lightLed("no_warping")
 		
-		if run == False:
+	        if run == False:
 			break
 	
     except (KeyboardInterrupt, SystemExit): #Programm kann mit Ctrl + C angehalten werden
