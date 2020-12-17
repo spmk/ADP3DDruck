@@ -3,9 +3,9 @@ from telegram.ext import Updater, CommandHandler, CallbackContext
 import telepot
 from telepot.loop import MessageLoop
 import execute
-
+chat_id = "473099318"
 def hello(update: Update, context: CallbackContext) -> None:
-    bot.sendMessage("473099318", "Everything is fine :)")
+    bot.sendMessage(chat_id, "Everything is fine :)")
 def start(update: Update, context: CallbackContext) -> None:
     bot.sendMessage(chat_id, "Ich mach noch nix")
     execute.run = True
