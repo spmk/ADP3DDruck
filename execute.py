@@ -27,11 +27,11 @@ def measure():
         hx711.set_scale_ratio(scaleRatio)
 
         #Erstelle eine neue csv-datei:
-        #date_time = datetime.now().strftime("%y-%m-%d_%H-%M")
-        #path = os.path.dirname(__file__)+"/Data/" + date_time
-        #f = open("Data/" + date_time + ".csv", "w+")
-        #f_csv_writer = csv.writer(f,delimiter=",")
-        #row_index = 0
+        date_time = datetime.now().strftime("%y-%m-%d_%H-%M")
+        path = os.path.dirname(__file__)+"/Data/" + date_time
+        f = open("Data/" + date_time + ".csv", "w+")
+        f_csv_writer = csv.writer(f,delimiter=",")
+        row_index = 0
 
         #print("Values are saved to: " + date_time + ".csv")
 
@@ -45,11 +45,11 @@ def measure():
                 print(outputvalue, "") # Hier "" kann eine Einheit eingefuegt werden
 
                 #Erstelle Inhalt der naechsten Reihe:
-                #row_time = datetime.now().strftime("%H/%M/%S")
-                #row_content = [row_index, row_time, outputvalue]
-                #row_index +=1
+                row_time = datetime.now().strftime("%H/%M/%S")
+                row_content = [row_index, row_time, outputvalue]
+                row_index +=1
                 #Schreibe die naeste Reihe:
-                #f_csv_writer.writerow(row_content)
+                f_csv_writer.writerow(row_content)
             
                 if outputvalue>limit:
                         statusLEDs.lightLed("warping")
@@ -64,5 +64,5 @@ def measure():
             print("Pfiat di Gott! :D")
 
         finally:
-            #f.close() # Schliesse Daten.txt
+            f.close() # Schliesse Daten.txt
             GPIO.cleanup()
