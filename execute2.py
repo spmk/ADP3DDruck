@@ -40,5 +40,5 @@ def measure():
             else: 
                 statusLEDs.lightLed("no_warping")
     finally:
-        f.close() # Schliesse Daten.txt
+        #f.close() # Schliesse Daten.txt
         GPIO.cleanup()
