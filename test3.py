@@ -33,7 +33,7 @@ def stop(update: Update, context: CallbackContext) -> None:
     
 # Telegram Poll-Loop
 
-def a(queue)
+def a(queue):
     bot = telepot.Bot(Telegram_Token)
     updater = Updater(Telegram_Token)
 
