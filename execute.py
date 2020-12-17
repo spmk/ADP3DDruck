@@ -61,9 +61,9 @@ def measure():
                     else: 
                             statusLEDs.lightLed("no_warping")
 
-        except (KeyboardInterrupt, SystemExit): #Programm kann mit Ctrl + C angehalten werden
-            print("Pfiat di Gott! :D")
+            except (KeyboardInterrupt, SystemExit): #Programm kann mit Ctrl + C angehalten werden
+                print("Pfiat di Gott! :D")
 
-        finally:
-            #f.close() # Schliesse Daten.txt
-            GPIO.cleanup()
+            finally:
+                #f.close() # Schliesse Daten.txt
+                GPIO.cleanup()
