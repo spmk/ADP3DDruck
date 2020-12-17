@@ -22,6 +22,13 @@ updater = Updater(Telegram_Token)
 status_Bot = 0
 z=0
 command = 0
+q = Queue()
+p1 = Process(target=a, args=(q,))
+p2 = Process(target=b, args=(q,))
+p1.start()
+p2.start()
+p1.join()
+p2.join()
 
 
 # Telegram Bot Befehle definieren
@@ -108,10 +115,3 @@ def b(queue):
             print("GPIO Cleanup complete!")
         
 
-q = Queue()
-p1 = Process(target=a, args=(q,))
-p2 = Process(target=b, args=(q,))
-p1.start()
-p2.start()
-p1.join()
-p2.join()
