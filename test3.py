@@ -19,18 +19,19 @@ chat_id = "473099318"
 Telegram_Token = '1435246331:AAEuTzd96pMR8ACXl92za8CSFo_0gd1QCvY'
 bot = telepot.Bot(Telegram_Token)
 updater = Updater(Telegram_Token)
+status_Bot = 0
 
 # Telegram Bot Befehle definieren
 def hello(update: Update, context: CallbackContext) -> None:
     bot.sendMessage(chat_id, "Everything is fine :)")
-    
+
 def start(update: Update, context: CallbackContext) -> None:
     bot.sendMessage(chat_id, "Ich mach noch nix")
-    queue.put(1)
+    status_Bot = 1
     
 def stop(update: Update, context: CallbackContext) -> None:
     bot.sendMessage(chat_id, "Ich mach noch nix")
-    queue.put(0)
+    status_Bot = 0
     
 # Telegram Poll-Loop
 
@@ -40,10 +41,10 @@ def a(queue):
     dp.add_handler(CommandHandler("stop", stop))
 
     updater.dispatcher.add_handler(CommandHandler('hello', hello))
-
+    
     updater.start_polling()
     updater.idle()
-    run = False
+    queue.put(status_Bot)
 
 #Messschleife
 
