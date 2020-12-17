@@ -26,7 +26,7 @@ x=x+1
 print(x)
 def fire_and_forget(): 
     execute.measure()
-p = Process(target=fire_and_forget, args=())
+p = execute.measure()
 # you have to set daemon true to not have to wait for the process to join
 p.daemon = True
 p.start()
