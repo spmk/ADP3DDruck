@@ -31,12 +31,9 @@ def handle(msg):
 		
 
 #Bot Objekt wird erstellt und diesem werden die Befehle uebergeben
-#bot = telepot.Bot('1435246331:AAEuTzd96pMR8ACXl92za8CSFo_0gd1QCvY') #Token
-#MessageLoop(bot, handle).run_as_thread()
-print(telepot.Bot('1435246331:AAEuTzd96pMR8ACXl92za8CSFo_0gd1QCvY') #Token
-#while True:
- #   bot = telepot.Bot('1435246331:AAEuTzd96pMR8ACXl92za8CSFo_0gd1QCvY') #Token
- #   handle()
+bot = telepot.Bot('1435246331:AAEuTzd96pMR8ACXl92za8CSFo_0gd1QCvY') #Token
+MessageLoop(bot, handle).run_as_thread()
+print(bot)
 
 #Boot up Nachricht des Bots:
 print("Hi! I am your personal warping assistant!") #Auf der Konsole
