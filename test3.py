@@ -28,11 +28,11 @@ def hello(update: Update, context: CallbackContext) -> None:
 
 def start(update: Update, context: CallbackContext) -> None:
     bot.sendMessage(chat_id, "Ich mach noch nix")
-    status_Bot = 1
+    status_Bot = True
     
 def stop(update: Update, context: CallbackContext) -> None:
     bot.sendMessage(chat_id, "Ich mach noch nix")
-    status_Bot = 0
+    status_Bot = False
     
 # Telegram Poll-Loop
 
@@ -73,7 +73,7 @@ def b(queue):
     print("limit zugewiesen")
     try:
         while True:
-            status = queue.get()
+            status = queue.get(True, timeout = 1)
             outputvalue = random.random()
             print(outputvalue, "") # Hier "" kann eine Einheit eingefuegt werden
 
