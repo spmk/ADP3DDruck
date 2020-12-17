@@ -68,9 +68,9 @@ def b(queue):
     # Scale Ratio setzen
     scaleRatio = -1 # Spannungswert fuer Warping initial
     limit = 10000 # Wert, ab dem Warping erkannt wird
-    print("limit zugewiesen")
     averageOfXValues = 10 #Anzahl an Ausgelesenen Werten, die zur Auswertung gemittelt werden
     hx711.set_scale_ratio(scaleRatio)
+    print("limit zugewiesen")
     try:
         while True:
             status = queue.get()
@@ -100,6 +100,7 @@ def b(queue):
     finally:
         f.close() # Schliesse Daten.txt
         GPIO.cleanup()
+        print("GPIO Cleanup complete!")
         
 if __name__ == '__main__':
     q = Queue()
