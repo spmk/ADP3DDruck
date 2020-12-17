@@ -22,6 +22,7 @@ def measure():
     #Scale Ratio setzen
     scaleRatio = -1 #Spannungswert fuer Warping initial
     limit = 10000 #Wert, ab dem Warping erkannt wird
+    print("limit zugewiesen")
     averageOfXValues = 10 #Anzahl an Ausgelesenen Werten, die zur Auswertung gemittelt werden
     hx711.set_scale_ratio(scaleRatio)
 
