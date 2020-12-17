@@ -31,7 +31,7 @@ def hello(update: Update, context: CallbackContext) -> None:
 def start(update: Update, context: CallbackContext):
     bot.sendMessage(chat_id, "Queue true")
     command = 1
-    bot.sendMessage(chat_id, "Queue False")
+    bot.sendMessage(chat_id, command)
     
 def stop(update: Update, context: CallbackContext):
     bot.sendMessage(chat_id, "Queue False")
