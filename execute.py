@@ -10,7 +10,7 @@ import Relais
 import telegrambot
 import random
 
-run == false
+run = false
 #Code wird nur ausgefuhrt, wenn execute direkt ausgefuehrt wird
 def measure(befehl_status): 
 	if befehl_status == 'start':
