@@ -13,7 +13,7 @@ def hello(update: Update, context: CallbackContext) -> None:
     
 def start(update: Update, context: CallbackContext) -> None:
     bot.sendMessage(chat_id, "Ich mach noch nix")
-    execute2.run = True
+    run = True
     p = Process(target=fire_and_forget, args=())
     # you have to set daemon true to not have to wait for the process to join
     p.daemon = True
@@ -23,7 +23,7 @@ def start(update: Update, context: CallbackContext) -> None:
 
 def stop(update: Update, context: CallbackContext) -> None:
     bot.sendMessage(chat_id, "Ich mach noch nix")
-    execute2.run = False
+    run = False
 
 def fire_and_forget(): 
     execute2.measure()
