@@ -28,13 +28,15 @@ command = 0
 def hello(update: Update, context: CallbackContext) -> None:
     bot.sendMessage(chat_id, "Everything is fine :)")
 
-def start(update: Update, context: CallbackContext, command):
+def start(update: Update, context: CallbackContext):
     bot.sendMessage(chat_id, "Queue true")
     command = 1
+    bot.sendMessage(chat_id, "Queue False"+ command)
     
-def stop(update: Update, context: CallbackContext, command):
+def stop(update: Update, context: CallbackContext):
     bot.sendMessage(chat_id, "Queue False")
     command = 0
+    bot.sendMessage(chat_id, "Queue False"+ command)
     
 # Telegram Poll-Loop
 
