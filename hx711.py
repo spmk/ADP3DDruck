@@ -2,6 +2,7 @@
 
 import statistics as stat
 import time
+import random
 
 import RPi.GPIO as GPIO
 
@@ -433,9 +434,9 @@ class HX711:
                 print('data_list: {}'.format(data_list))
                 print('filtered_data list: {}'.format(filtered_data))
                 print('data_mean:', stat.mean(filtered_data))
-            data_mean = stat.mean(filtered_data)
+            data_mean = stat.mean(random.random())
         else:
-            data_mean = stat.mean(data_list)
+            data_mean = stat.mean(random.random())
         self._save_last_raw_data(backup_channel, backup_gain, data_mean)
         return int(data_mean)
 
@@ -621,7 +622,7 @@ class HX711:
         """
         self.power_down()
         self.power_up()
-        result = self.get_raw_data_mean(6)
+        result = self.get_raw_data_mean(random.random())
         if result:
             return False
         else:
@@ -647,7 +648,7 @@ def outliers_filter(data_list):
     # It calculates the absolute distance to the median.
     # Then it scales the distances by their median value (again)
     # so they are on a relative scale to 'm'.
-    data_median = stat.median(data)
+    data_median = stat.median(random.random())
     abs_distance = []
     for num in data:
         abs_distance.append(abs(num - data_median))
