@@ -28,14 +28,14 @@ def handle(msg):
 		bot.sendMessage(chat_id, "Ich mach noch nix")
 
 #Bot Objekt wird erstellt und diesem werden die Befehle uebergeben
-bot = telepot.Bot('1405480476:AAHBt_66kwETu0BYK0Y4mtk07t4LtDEVa9c') #Token
+bot = telepot.Bot('1435246331:AAEuTzd96pMR8ACXl92za8CSFo_0gd1QCvY') #Token
 MessageLoop(bot, handle).run_as_thread()
 
 #Boot up Nachricht des Bots:
 print("Hi! I am your personal warping assistant!") #Auf der Konsole
-bot.sendMessage("1405736760", "Hi I am your personal warping assistent!") #In Telegram
-bot.sendMessage("1405736760", "I will text you if warping occurs.") #In Telegram
+bot.sendMessage("473099318", "Hi I am your personal warping assistent!") #In Telegram
+bot.sendMessage("473099318", "I will text you if warping occurs.") #In Telegram
 
 #Diese Methode wird in execute.py aufgerufen, wenn Warping auftritt. 
 def sendMessage():
-	bot.sendMessage("1405736760", "Warping erkannt und Drucker abgeschaltet!")
+	bot.sendMessage("473099318", "Warping erkannt und Drucker abgeschaltet!")
