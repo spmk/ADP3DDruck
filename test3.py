@@ -8,10 +8,49 @@ import os
 import statusLEDs
 import Relais
 import random
+from telegram import Update
+from telegram.ext import Updater, CommandHandler, CallbackContext
+import telepot
+from telepot.loop import MessageLoop
+from multiprocessing import Process, Queue
 
-run = False
+# Telegram Bot
+chat_id = "473099318"
+Telegram_Token = '1435246331:AAEuTzd96pMR8ACXl92za8CSFo_0gd1QCvY'
 
-def measure():
+
+# Telegram Bot Befehle definieren
+def hello(update: Update, context: CallbackContext) -> None:
+    bot.sendMessage(chat_id, "Everything is fine :)")
+    
+def start(update: Update, context: CallbackContext) -> None:
+    bot.sendMessage(chat_id, "Ich mach noch nix")
+    queue.put(1)
+    
+def stop(update: Update, context: CallbackContext) -> None:
+    bot.sendMessage(chat_id, "Ich mach noch nix")
+    queue.put(0)
+    
+# Telegram Poll-Loop
+
+def a(queue)
+    bot = telepot.Bot(Telegram_Token)
+    updater = Updater(Telegram_Token)
+
+    dp = updater.dispatcher # NICHT LÖSCHEN!
+    dp.add_handler(CommandHandler("start", start))
+    dp.add_handler(CommandHandler("stop", stop))
+
+    updater.dispatcher.add_handler(CommandHandler('hello', hello))
+
+    updater.start_polling()
+    updater.idle()
+    run = False
+
+#Messschleife
+
+def b(queue):
+    
     GPIO.setmode(GPIO.BCM)
     hx711 = HX711(dout_pin=5,pd_sck_pin=6,
                     gain_channel_A=64,select_channel='A')
@@ -32,6 +71,7 @@ def measure():
     
     try:
         while True:
+            status = queue.get()
             outputvalue = random.random()
             print(outputvalue, "") # Hier "" kann eine Einheit eingefuegt werden
 
@@ -50,9 +90,20 @@ def measure():
                 Relais.statusDrucker("no_warping")
             else:
                 statusLEDs.lightLed("no_warping")
-            if run == False:
-                break
                 
+            if status == 0:
+                break
+            
+
     finally:
         f.close() # Schliesse Daten.txt
         GPIO.cleanup()
+        
+if __name__ == '__main__':
+    q = Queue()
+    p1 = Process(target=a, args=(q,))
+    p2 = Process(target=b, args=(q,))
+    p1.start()
+    p2.start()
+    p1.join()
+    p2.join()
