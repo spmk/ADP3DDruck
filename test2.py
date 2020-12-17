@@ -11,7 +11,7 @@ def hello(update: Update, context: CallbackContext) -> None:
     bot.sendMessage(chat_id, "Everything is fine :)")
 
     
-def start(bot, update) -> None:
+def starten(bot, update) -> None:
     bot.sendMessage(chat_id, "Ich mach noch nix")
     execute.run = True
     execute.measure()
