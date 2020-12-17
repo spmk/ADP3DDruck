@@ -2,13 +2,19 @@ from telegram import Update
 from telegram.ext import Updater, CommandHandler, CallbackContext
 import telepot
 from telepot.loop import MessageLoop
-
+import execute
 
 def hello(update: Update, context: CallbackContext) -> None:
     bot.sendMessage("473099318", "Everything is fine :)")
     update.message.reply_text(f'Hello {update.effective_user.Joshua}')
-bot = telepot.Bot('1435246331:AAEuTzd96pMR8ACXl92za8CSFo_0gd1QCvY')    
-updater = Updater('1435246331:AAEuTzd96pMR8ACXl92za8CSFo_0gd1QCvY')
+def start((update: Update, context: CallbackContext) -> None:
+    bot.sendMessage(chat_id, "Ich mach noch nix")
+	execute.run = True
+	execute.measure()
+def stop((update: Update, context: CallbackContext) -> None:
+    bot.sendMessage(chat_id, "Ich mach noch nix")
+	execute.run = False
+
 
 updater.dispatcher.add_handler(CommandHandler('hello', hello))
 
