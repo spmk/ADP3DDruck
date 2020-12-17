@@ -31,7 +31,7 @@ def measure():
     hx711.set_scale_ratio(scaleRatio)
     
     try:
-        while run == True:
+        while True:
             outputvalue = random.random()
             print(outputvalue, "") # Hier "" kann eine Einheit eingefuegt werden
 
@@ -50,6 +50,9 @@ def measure():
                 Relais.statusDrucker("no_warping")
             else: 
                 statusLEDs.lightLed("no_warping")
+            if run == False
+                break
+                
     finally:
         f.close() # Schliesse Daten.txt
         GPIO.cleanup()
