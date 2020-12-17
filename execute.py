@@ -51,18 +51,18 @@ def measure():
         GPIO.cleanup()
     
     try:	
-	while run == True:
-		outputvalue = random.random()
-		print(outputvalue, "") # Hier "" kann eine Einheit eingefuegt werden
+        while run == True:
+	        outputvalue = random.random()
+	        print(outputvalue, "") # Hier "" kann eine Einheit eingefuegt werden
 
-		#Erstelle Inhalt der naechsten Reihe:
-		#row_time = datetime.now().strftime("%H/%M/%S")
-		#row_content = [row_index, row_time, outputvalue]
-		#row_index +=1
-		#Schreibe die naeste Reihe:
-		#f_csv_writer.writerow(row_content)
+	        #Erstelle Inhalt der naechsten Reihe:
+	        #row_time = datetime.now().strftime("%H/%M/%S")
+	        #row_content = [row_index, row_time, outputvalue]
+	        #row_index +=1
+	        #Schreibe die naeste Reihe:
+	        #f_csv_writer.writerow(row_content)
 		
-		if outputvalue>limit:
+	        if outputvalue>limit:
 			statusLEDs.lightLed("warping")
 			Relais.statusDrucker("warping")
 			telegrambot.sendMessage()
