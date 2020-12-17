@@ -24,11 +24,11 @@ def handle(msg):
 		bot.sendMessage(chat_id, "/start - Start the Warping Detective \n /stop - Stop the Warping Detective \n /status - Sends status if warping occured \n /warpingLED - Turns on RED LED \n /no_warpingLED - Turns on GREEN LED")
 	elif command == '/start':
 		bot.sendMessage(chat_id, "Ich mach noch nix")
-		execute.run = true
+		execute.run = True
 		execute.measurment('start')
 	elif command == '/stop':
 		bot.sendMessage(chat_id, "Ich mach noch nix")
-		execute.run = false
+		execute.run = False
 		execute.measurment('stop')
 		
 
