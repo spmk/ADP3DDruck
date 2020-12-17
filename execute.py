@@ -49,7 +49,8 @@ def measure():
     finally:
         #f.close() # Schliesse Daten.txt
         GPIO.cleanup()
-	try:	
+    
+    try:	
 		while run == True:
 			outputvalue = random.random()
 			print(outputvalue, "") # Hier "" kann eine Einheit eingefuegt werden
@@ -73,9 +74,9 @@ def measure():
 			if run == False:
 				break
 	
-	except (KeyboardInterrupt, SystemExit): #Programm kann mit Ctrl + C angehalten werden
+    except (KeyboardInterrupt, SystemExit): #Programm kann mit Ctrl + C angehalten werden
 		print("Pfiat di Gott! :D")
 
-	finally:
+    finally:
 		#f.close() # Schliesse Daten.txt
 		GPIO.cleanup()
