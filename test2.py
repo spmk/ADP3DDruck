@@ -14,24 +14,25 @@ def hello(update: Update, context: CallbackContext) -> None:
 def start(update: Update, context: CallbackContext) -> None:
     bot.sendMessage(chat_id, "Ich mach noch nix")
     execute2.run = True
+    p = Process(target=fire_and_forget, args=())
+    # you have to set daemon true to not have to wait for the process to join
+    p.daemon = True
+    p.start()
+    print("doing stuff in the background")
     
 
 def stop(update: Update, context: CallbackContext) -> None:
     bot.sendMessage(chat_id, "Ich mach noch nix")
     execute2.run = False
 
-
+def fire_and_forget(): 
+    execute2.measure()
 
 x=1
 x=x+1
 print(x)
-def fire_and_forget(): 
-    execute2.measure()
-p = Process(target=fire_and_forget, args=())
-# you have to set daemon true to not have to wait for the process to join
-p.daemon = True
-p.start()
-print("doing stuff in the background")
+
+
 
 bot = telepot.Bot(Telegram_Token)
 updater = Updater(Telegram_Token)
