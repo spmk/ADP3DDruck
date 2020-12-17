@@ -17,7 +17,8 @@ from multiprocessing import Process, Queue
 # Telegram Bot
 chat_id = "473099318"
 Telegram_Token = '1435246331:AAEuTzd96pMR8ACXl92za8CSFo_0gd1QCvY'
-
+bot = telepot.Bot(Telegram_Token)
+updater = Updater(Telegram_Token)
 
 # Telegram Bot Befehle definieren
 def hello(update: Update, context: CallbackContext) -> None:
@@ -34,9 +35,6 @@ def stop(update: Update, context: CallbackContext) -> None:
 # Telegram Poll-Loop
 
 def a(queue):
-    bot = telepot.Bot(Telegram_Token)
-    updater = Updater(Telegram_Token)
-
     dp = updater.dispatcher # NICHT LÖSCHEN!
     dp.add_handler(CommandHandler("start", start))
     dp.add_handler(CommandHandler("stop", stop))
