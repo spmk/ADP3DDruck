@@ -11,7 +11,7 @@ import telegrambot
 import random
 
 #Code wird nur ausgefuhrt, wenn execute direkt ausgefuehrt wird
-if __name__ == "__main__": 
+def measuere(): 
 	try:
 		GPIO.setmode(GPIO.BCM)
 		hx711 = HX711(dout_pin=5,pd_sck_pin=6,
