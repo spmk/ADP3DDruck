@@ -72,7 +72,7 @@ def measure():
 	                statusLEDs.lightLed("no_warping")
 		
 	        if run == False:
-			break
+		        break
 	
     except (KeyboardInterrupt, SystemExit): #Programm kann mit Ctrl + C angehalten werden
 		print("Pfiat di Gott! :D")
