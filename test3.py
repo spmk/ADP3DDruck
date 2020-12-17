@@ -27,12 +27,12 @@ def hello(update: Update, context: CallbackContext) -> None:
     bot.sendMessage(chat_id, "Everything is fine :)")
 
 def start(update: Update, context: CallbackContext) -> None:
-    bot.sendMessage(chat_id, "Ich mach noch nix")
-    status_Bot = True
+    bot.sendMessage(chat_id, "Queue true")
+    queue.put(True)
     
 def stop(update: Update, context: CallbackContext) -> None:
-    bot.sendMessage(chat_id, "Ich mach noch nix")
-    status_Bot = False
+    bot.sendMessage(chat_id, "Queue False")
+    queue.put(False)
     
 # Telegram Poll-Loop
 
@@ -48,7 +48,7 @@ def a(queue):
     
     z=z+1
     print(z)
-    queue.put(status_Bot)
+    
 
 #Messschleife
 
