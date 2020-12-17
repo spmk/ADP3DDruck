@@ -4,7 +4,7 @@ import telepot
 from telepot.loop import MessageLoop
 import execute2
 from multiprocessing import Process
-
+run = False
 chat_id = "473099318"
 Telegram_Token = '1435246331:AAEuTzd96pMR8ACXl92za8CSFo_0gd1QCvY'
 

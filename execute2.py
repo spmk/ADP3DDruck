@@ -8,8 +8,9 @@ import os
 import statusLEDs
 import Relais
 import random
+import test2
 
-run = False
+
 
 def measure():
     GPIO.setmode(GPIO.BCM)
@@ -50,7 +51,7 @@ def measure():
                 Relais.statusDrucker("no_warping")
             else: 
                 statusLEDs.lightLed("no_warping")
-            if run == False
+            if test2.run == False
                 break
                 
     finally:
