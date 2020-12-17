@@ -25,11 +25,10 @@ def handle(msg):
 	elif command == '/start':
 		bot.sendMessage(chat_id, "Ich mach noch nix")
 		execute.run = True
-		execute.measurment('start')
+		execute.measurment()
 	elif command == '/stop':
 		bot.sendMessage(chat_id, "Ich mach noch nix")
 		execute.run = False
-		execute.measurment('stop')
 		
 
 #Bot Objekt wird erstellt und diesem werden die Befehle uebergeben
