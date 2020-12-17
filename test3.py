@@ -21,6 +21,7 @@ bot = telepot.Bot(Telegram_Token)
 updater = Updater(Telegram_Token)
 status_Bot = 0
 z=0
+queue = []
 
 # Telegram Bot Befehle definieren
 def hello(update: Update, context: CallbackContext) -> None:
