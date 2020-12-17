@@ -23,14 +23,7 @@ status_Bot = 0
 z=0
 command = 0
 
-if __name__ == ”__main__”
-    q = Queue()
-    p1 = Process(target=a, args=(q,))
-    p2 = Process(target=b, args=(q,))
-    p1.start()
-    p2.start()
-    p1.join()
-    p2.join()
+
 
 # Telegram Bot Befehle definieren
 def hello(update: Update, context: CallbackContext) -> None:
@@ -116,3 +109,11 @@ def b(queue):
             print("GPIO Cleanup complete!")
         
 
+if __name__ == "__main__"
+    q = Queue()
+    p1 = Process(target=a, args=(q,))
+    p2 = Process(target=b, args=(q,))
+    p1.start()
+    p2.start()
+    p1.join()
+    p2.join()
