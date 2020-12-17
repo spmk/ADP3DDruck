@@ -103,10 +103,10 @@ def b(queue):
             if status == 0:
                 break
                 
-
-            f.close() # Schliesse Daten.txt
-            GPIO.cleanup()
-            print("GPIO Cleanup complete!")
+    finally:
+        f.close() # Schliesse Daten.txt
+        GPIO.cleanup()
+        print("GPIO Cleanup complete!")
         
 
 def main()
