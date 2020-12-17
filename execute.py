@@ -8,6 +8,7 @@ import os
 import statusLEDs
 import Relais
 import telegrambot
+import random
 
 #Code wird nur ausgefuhrt, wenn execute direkt ausgefuehrt wird
 if __name__ == "__main__": 
@@ -16,8 +17,8 @@ if __name__ == "__main__":
 		hx711 = HX711(dout_pin=5,pd_sck_pin=6,
 						gain_channel_A=64,select_channel='A')
 		
-		hx711.reset()   #Before we start, reset the HX711 (not obligate)
-		hx711.zero()    #Offset eliminieren
+		#hx711.reset()   #Before we start, reset the HX711 (not obligate)
+		#hx711.zero()    #Offset eliminieren
 		
 		#Scale Ratio setzen
 		scaleRatio = -1 #Spannungswert fuer Warping initial
@@ -40,7 +41,7 @@ if __name__ == "__main__":
 		print('Current value measured is: ')
 
 		while True:
-			outputvalue = hx711.get_weight_mean(averageOfXValues)
+			outputvalue = random.random()
 			print(outputvalue, "") # Hier "" kann eine Einheit eingefuegt werden
 			
 			#Erstelle Inhalt der naechsten Reihe:
