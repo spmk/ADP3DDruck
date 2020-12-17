@@ -14,7 +14,6 @@ run == false
 #Code wird nur ausgefuhrt, wenn execute direkt ausgefuehrt wird
 def measure(befehl_status): 
 	if befehl_status == 'start':
-		run == true
 		try:
 			GPIO.setmode(GPIO.BCM)
 			hx711 = HX711(dout_pin=5,pd_sck_pin=6,
@@ -51,29 +50,34 @@ def measure(befehl_status):
 		finally:
 			#f.close() # Schliesse Daten.txt
 			GPIO.cleanup()
-	else:
-		run == false
-		
- 	while run == true:
-		outputvalue = random.random()
-		print(outputvalue, "") # Hier "" kann eine Einheit eingefuegt werden
+	try:	
+		while run == true:
+			outputvalue = random.random()
+			print(outputvalue, "") # Hier "" kann eine Einheit eingefuegt werden
 
-		#Erstelle Inhalt der naechsten Reihe:
-		#row_time = datetime.now().strftime("%H/%M/%S")
-		#row_content = [row_index, row_time, outputvalue]
-		#row_index +=1
-		#Schreibe die naeste Reihe:
-		#f_csv_writer.writerow(row_content)
+			#Erstelle Inhalt der naechsten Reihe:
+			#row_time = datetime.now().strftime("%H/%M/%S")
+			#row_content = [row_index, row_time, outputvalue]
+			#row_index +=1
+			#Schreibe die naeste Reihe:
+			#f_csv_writer.writerow(row_content)
 
-		if outputvalue>limit:
-			statusLEDs.lightLed("warping")
-			Relais.statusDrucker("warping")
-			telegrambot.sendMessage()
-			time.sleep(20)
-			Relais.statusDrucker("no_warping")
-			break
-		else: 
-			statusLEDs.lightLed("no_warping")
-			
-		if run == false:
-			break
+			if outputvalue>limit:
+				statusLEDs.lightLed("warping")
+				Relais.statusDrucker("warping")
+				telegrambot.sendMessage()
+				time.sleep(20)
+				Relais.statusDrucker("no_warping")
+			else: 
+				statusLEDs.lightLed("no_warping")
+
+			if run == false:
+				break
+	
+	except (KeyboardInterrupt, SystemExit): #Programm kann mit Ctrl + C angehalten werden
+		print("Pfiat di Gott! :D")
+
+	finally:
+		#f.close() # Schliesse Daten.txt
+		GPIO.cleanup()
+		break
