@@ -12,7 +12,7 @@ import random
 run = False
 #Code wird nur ausgefuhrt, wenn execute direkt ausgefuehrt wird
 def measure(): 
-    while True
+    while True:
         if run == True:
             GPIO.setmode(GPIO.BCM)
             hx711 = HX711(dout_pin=5,pd_sck_pin=6,
