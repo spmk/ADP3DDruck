@@ -12,6 +12,10 @@ import random
 run = False
 
 def measure():
+    GPIO.setmode(GPIO.BCM)
+    hx711 = HX711(dout_pin=5,pd_sck_pin=6,
+                    gain_channel_A=64,select_channel='A')
+    
     #Erstelle eine neue csv-datei:
     date_time = datetime.now().strftime("%y-%m-%d_%H-%M")
     path = os.path.dirname(__file__)+"/Data/" + date_time
