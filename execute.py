@@ -64,7 +64,7 @@ if __name__ == "__main__":
 		print("Pfiat di Gott! :D")
 
 	finally:
-		f.close() # Schliesse Daten.txt
+		#f.close() # Schliesse Daten.txt
 		GPIO.cleanup()
 
  
