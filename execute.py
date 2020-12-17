@@ -38,7 +38,6 @@ def measure():
 
         #Gewichte ausgeben, LEDs Relaise ansteuern
         print("Now, I will read data in infinite loop. To exit press 'CTRL + C'")
-        input('Press Enter to begin reading')
         print('Current value measured is: ')
 
 
