@@ -24,8 +24,9 @@ def stop(update: Update, context: CallbackContext) -> None:
 x=1
 x=x+1
 print(x)
-
-p = Process(target=execute.measure, args=())
+def fire_and_forget(): 
+    execute.measure()
+p = Process(target=fire_and_forget, args=())
 # you have to set daemon true to not have to wait for the process to join
 p.daemon = True
 p.start()
