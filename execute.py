@@ -45,9 +45,9 @@ if __name__ == "__main__":
 			print(outputvalue, "") # Hier "" kann eine Einheit eingefuegt werden
 			
 			#Erstelle Inhalt der naechsten Reihe:
-			row_time = datetime.now().strftime("%H/%M/%S")
-			row_content = [row_index, row_time, outputvalue]
-			row_index +=1
+			#row_time = datetime.now().strftime("%H/%M/%S")
+			#row_content = [row_index, row_time, outputvalue]
+			#row_index +=1
 			#Schreibe die naeste Reihe:
 			#f_csv_writer.writerow(row_content)
 			
