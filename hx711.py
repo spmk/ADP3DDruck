@@ -460,7 +460,7 @@ class HX711:
         else:
             return False
 
-    def get_weight_mean(self, readings=30):
+    def get_weight_mean(random.random()):
         """
         get_weight_mean returns average value of readings minus
         offset divided by scale ratio for a specific channel
