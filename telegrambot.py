@@ -20,6 +20,12 @@ def handle(msg):
 	elif command == '/no_warpingLED':
 		bot.sendMessage(chat_id, "Gruene LED ist aus!")
 		statusLEDs.lightLed("no_warping")
+    elif command == '/start' # Abfrage, ob Dienst erfolgreich gestartet wurde?
+        bot.sendMessage(chat_id, "Warping Detektiv wird losgeschickt...") 
+        statusLEDs.lightLED("no_warping")
+    elif command == '/stop' # Abfrage, ob Dienst erfolgreich gestoppt wurde?
+        bot.sendMessage(chat_id, "Dienst wird gestoppt...")
+        
 
 #Bot Objekt wird erstellt und diesem werden die Befehle uebergeben
 bot = telepot.Bot('1405480476:AAHBt_66kwETu0BYK0Y4mtk07t4LtDEVa9c') #Token
