@@ -24,7 +24,13 @@ def stop(update: Update, context: CallbackContext) -> None:
 x=1
 x=x+1
 print(x)
-execute.measure()
+
+p = Process(target=execute.measure, args=())
+# you have to set daemon true to not have to wait for the process to join
+p.daemon = True
+p.start()
+return "doing stuff in the background"
+
 bot = telepot.Bot(Telegram_Token)
 updater = Updater(Telegram_Token)
 
