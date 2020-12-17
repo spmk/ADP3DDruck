@@ -73,7 +73,7 @@ def b(queue):
     print("limit zugewiesen")
     try:
         while True:
-            status = queue.get(True, timeout = 1)
+            status = queue.get(True, timeout = 10)
             outputvalue = random.random()
             print(outputvalue, "") # Hier "" kann eine Einheit eingefuegt werden
 
