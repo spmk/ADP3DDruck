@@ -2,7 +2,7 @@ from telegram import Update
 from telegram.ext import Updater, CommandHandler, CallbackContext
 import telepot
 from telepot.loop import MessageLoop
-import execute2
+import execute22
 from multiprocessing import Process
 
 chat_id = "473099318"
@@ -13,12 +13,12 @@ def hello(update: Update, context: CallbackContext) -> None:
     
 def start(update: Update, context: CallbackContext) -> None:
     bot.sendMessage(chat_id, "Ich mach noch nix")
-    execute.run = True
+    execute2.run = True
     
 
 def stop(update: Update, context: CallbackContext) -> None:
     bot.sendMessage(chat_id, "Ich mach noch nix")
-    execute.run = False
+    execute2.run = False
 
 
 
@@ -26,7 +26,7 @@ x=1
 x=x+1
 print(x)
 def fire_and_forget(): 
-    execute.measure()
+    execute2.measure()
 p = Process(target=fire_and_forget, args=())
 # you have to set daemon true to not have to wait for the process to join
 p.daemon = True
