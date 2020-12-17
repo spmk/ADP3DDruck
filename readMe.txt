@@ -1,1 +1,0 @@
-Das kann unser Programm:
