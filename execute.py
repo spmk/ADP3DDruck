@@ -39,7 +39,7 @@ def measure():
     print('Current value measured is: ')
 
     try:	
-        while True:
+        while run == True:
             outputvalue = random.random()
             print(outputvalue, "") # Hier "" kann eine Einheit eingefuegt werden
 
