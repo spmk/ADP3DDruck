@@ -71,33 +71,32 @@ def b(queue):
     averageOfXValues = 10 #Anzahl an Ausgelesenen Werten, die zur Auswertung gemittelt werden
     hx711.set_scale_ratio(scaleRatio)
     print("limit zugewiesen")
-    try:
-        while True:
-            status = queue.get()
-            outputvalue = random.random()
-            print(outputvalue, "") # Hier "" kann eine Einheit eingefuegt werden
+    
+    while True:
+        status = queue.get()
+        outputvalue = random.random()
+        print(outputvalue, "") # Hier "" kann eine Einheit eingefuegt werden
 
-            # Erstelle Inhalt der naechsten Reihe:
-            row_time = datetime.now().strftime("%H/%M/%S")
-            row_content = [row_index, row_time, outputvalue]
-            row_index +=1
-            # Schreibe die naeste Reihe:
-            f_csv_writer.writerow(row_content)
-        
-            if outputvalue > limit:
-                statusLEDs.lightLed("warping")
-                Relais.statusDrucker("warping")
-                telegrambot.sendMessage()
-                time.sleep(20)
-                Relais.statusDrucker("no_warping")
-            else:
-                statusLEDs.lightLed("no_warping")
-                
-            if status == 0:
-                break
+        # Erstelle Inhalt der naechsten Reihe:
+        row_time = datetime.now().strftime("%H/%M/%S")
+        row_content = [row_index, row_time, outputvalue]
+        row_index +=1
+        # Schreibe die naeste Reihe:
+        f_csv_writer.writerow(row_content)
+
+        if outputvalue > limit:
+            statusLEDs.lightLed("warping")
+            Relais.statusDrucker("warping")
+            telegrambot.sendMessage()
+            time.sleep(20)
+            Relais.statusDrucker("no_warping")
+        else:
+            statusLEDs.lightLed("no_warping")
+            
+        if status == 0:
+            break
             
 
-    finally:
         f.close() # Schliesse Daten.txt
         GPIO.cleanup()
         print("GPIO Cleanup complete!")
