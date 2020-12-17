@@ -14,16 +14,20 @@ def start(update: Update, context: CallbackContext) -> None:
     bot.sendMessage(chat_id, "Ich mach noch nix")
     execute.run = True
     execute.measure()
-    
+
 def stop(update: Update, context: CallbackContext) -> None:
     bot.sendMessage(chat_id, "Ich mach noch nix")
     execute.run = False
 
 
+
+x=1
+x=x+1
+print(x)
 bot = telepot.Bot(Telegram_Token)
 updater = Updater(Telegram_Token)
 
-dp = updater.dispatcher
+dp = updater.dispatcher #Dieser ficker sorgt dafür, dass neue Befehle gefunden werden
 dp.add_handler(CommandHandler("start", start))
 dp.add_handler(CommandHandler("stop", stop))
 
