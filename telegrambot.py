@@ -24,8 +24,11 @@ def handle(msg):
 		bot.sendMessage(chat_id, "/start - Start the Warping Detective \n /stop - Stop the Warping Detective \n /status - Sends status if warping occured \n /warpingLED - Turns on RED LED \n /no_warpingLED - Turns on GREEN LED")
 	elif command == '/start':
 		bot.sendMessage(chat_id, "Ich mach noch nix")
+		execute.measurment('start')
 	elif command == '/stop':
 		bot.sendMessage(chat_id, "Ich mach noch nix")
+		execute.measurment('stop')
+		
 
 #Bot Objekt wird erstellt und diesem werden die Befehle uebergeben
 bot = telepot.Bot('1435246331:AAEuTzd96pMR8ACXl92za8CSFo_0gd1QCvY') #Token
