@@ -29,7 +29,7 @@ p = Process(target=execute.measure, args=())
 # you have to set daemon true to not have to wait for the process to join
 p.daemon = True
 p.start()
-return "doing stuff in the background"
+print("doing stuff in the background")
 
 bot = telepot.Bot(Telegram_Token)
 updater = Updater(Telegram_Token)
