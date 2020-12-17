@@ -28,15 +28,16 @@ def hello(update: Update, context: CallbackContext) -> None:
 
 def start(update: Update, context: CallbackContext) -> None:
     bot.sendMessage(chat_id, "Queue true")
-    queue.put(True)
+    command = 1
     
 def stop(update: Update, context: CallbackContext) -> None:
     bot.sendMessage(chat_id, "Queue False")
-    queue.put(False)
+    command = 0
     
 # Telegram Poll-Loop
 
 def a(queue):
+    
     dp = updater.dispatcher # NICHT LÖSCHEN!
     dp.add_handler(CommandHandler("start", start))
     dp.add_handler(CommandHandler("stop", stop))
@@ -45,7 +46,10 @@ def a(queue):
     
     updater.start_polling()
     updater.idle()
-    
+    if command == 1:
+        queue.put(True)
+    else:
+        queue.put(False)
     z=z+1
     print(z)
     
