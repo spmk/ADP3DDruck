@@ -21,18 +21,18 @@ bot = telepot.Bot(Telegram_Token)
 updater = Updater(Telegram_Token)
 status_Bot = 0
 z=0
-
+command = 0
 
 
 # Telegram Bot Befehle definieren
 def hello(update: Update, context: CallbackContext) -> None:
     bot.sendMessage(chat_id, "Everything is fine :)")
 
-def start(update: Update, context: CallbackContext) -> None:
+def start(update: Update, context: CallbackContext, command):
     bot.sendMessage(chat_id, "Queue true")
     command = 1
     
-def stop(update: Update, context: CallbackContext) -> None:
+def stop(update: Update, context: CallbackContext, command):
     bot.sendMessage(chat_id, "Queue False")
     command = 0
     
