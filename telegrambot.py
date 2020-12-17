@@ -39,7 +39,7 @@ MessageLoop(bot, handle).run_as_thread()
 print("Hi! I am your personal warping assistant!") #Auf der Konsole
 bot.sendMessage("473099318", "Hi I am your personal warping assistent!") #In Telegram
 bot.sendMessage("473099318", "I will text you if warping occurs.") #In Telegram
-pr
+
 #Diese Methode wird in execute.py aufgerufen, wenn Warping auftritt. 
 def sendMessage():
 	bot.sendMessage("473099318", "Warping erkannt und Drucker abgeschaltet!")
