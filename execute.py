@@ -80,4 +80,3 @@ def measure(befehl_status):
 	finally:
 		#f.close() # Schliesse Daten.txt
 		GPIO.cleanup()
-		break
