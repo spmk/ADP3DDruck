@@ -31,12 +31,10 @@ def hello(update: Update, context: CallbackContext) -> None:
 def start(update: Update, context: CallbackContext):
     bot.sendMessage(chat_id, "Queue true")
     command = 1
-    bot.sendMessage(chat_id, command)
     
 def stop(update: Update, context: CallbackContext):
     bot.sendMessage(chat_id, "Queue False")
-    command = 'hallo'
-    bot.sendMessage(chat_id, "Queue False")
+    command = 0
     
 # Telegram Poll-Loop
 
@@ -79,35 +77,35 @@ def b(queue):
     averageOfXValues = 10 #Anzahl an Ausgelesenen Werten, die zur Auswertung gemittelt werden
     hx711.set_scale_ratio(scaleRatio)
     print("limit zugewiesen")
-    
-    while True:
-        status = queue.get()
-        outputvalue = random.random()
-        print(outputvalue, "") # Hier "" kann eine Einheit eingefuegt werden
+    try:
+        while True:
+            status = queue.get()
+            outputvalue = random.random()
+            print(outputvalue, "") # Hier "" kann eine Einheit eingefuegt werden
 
-        # Erstelle Inhalt der naechsten Reihe:
-        row_time = datetime.now().strftime("%H/%M/%S")
-        row_content = [row_index, row_time, outputvalue]
-        row_index +=1
-        # Schreibe die naeste Reihe:
-        f_csv_writer.writerow(row_content)
+            # Erstelle Inhalt der naechsten Reihe:
+            row_time = datetime.now().strftime("%H/%M/%S")
+            row_content = [row_index, row_time, outputvalue]
+            row_index +=1
+            # Schreibe die naeste Reihe:
+            f_csv_writer.writerow(row_content)
 
-        if outputvalue > limit:
-            statusLEDs.lightLed("warping")
-            Relais.statusDrucker("warping")
-            telegrambot.sendMessage()
-            time.sleep(20)
-            Relais.statusDrucker("no_warping")
-        else:
-            statusLEDs.lightLed("no_warping")
-            
-        if status == 0:
-            break
-            
+            if outputvalue > limit:
+                statusLEDs.lightLed("warping")
+                Relais.statusDrucker("warping")
+                telegrambot.sendMessage()
+                time.sleep(20)
+                Relais.statusDrucker("no_warping")
+            else:
+                statusLEDs.lightLed("no_warping")
+                
+            if status == 0:
+                break
+                
 
-        f.close() # Schliesse Daten.txt
-        GPIO.cleanup()
-        print("GPIO Cleanup complete!")
+            f.close() # Schliesse Daten.txt
+            GPIO.cleanup()
+            print("GPIO Cleanup complete!")
         
 
 
