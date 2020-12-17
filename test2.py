@@ -7,11 +7,11 @@ import execute
 chat_id = "473099318"
 Telegram_Token = '1435246331:AAEuTzd96pMR8ACXl92za8CSFo_0gd1QCvY'
 
-def start(update: Update, context: CallbackContext) -> None:
+def hello(update: Update, context: CallbackContext) -> None:
     bot.sendMessage(chat_id, "Everything is fine :)")
 
     
-def hello(update: Update, context: CallbackContext) -> None:
+def start(bot, update) -> None:
     bot.sendMessage(chat_id, "Ich mach noch nix")
     execute.run = True
     execute.measure()
