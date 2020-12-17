@@ -6,6 +6,8 @@ import execute
 chat_id = "473099318"
 def hello(update: Update, context: CallbackContext) -> None:
     bot.sendMessage(chat_id, "Everything is fine :)")
+    execute.run = True
+    execute.measure()
 def start(update: Update, context: CallbackContext) -> None:
     bot.sendMessage(chat_id, "Ich mach noch nix")
     #execute.run = True
