@@ -2,10 +2,7 @@ import time
 import RPi.GPIO as GPIO
 # Zählweise der Pins festlegen
 GPIO.setmode(GPIO.BOARD)
-# Pin 22 (GPIO 25) als Ausgang festlegen
-GPIO.setup(5, GPIO.OUT)
-GPIO.setup(6, GPIO.OUT)
-# Ausgang 3 mal ein-/ausschalten
+
 
 while True:
     
