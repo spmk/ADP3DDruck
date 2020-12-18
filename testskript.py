@@ -9,9 +9,9 @@ GPIO.setup(6, GPIO.OUT)
 
 while True:
     
-    x = GPIO.input(5) == GPIO.HIGH:
+    x = GPIO.input(5)
     print('Pin 5: ' + x)
-    y = GPIO.input(6) == GPIO.HIGH:
+    y = GPIO.input(6)
     print('Pin 6: ' + y)
     # eine Sekunden warten
     time.sleep(0.5)
